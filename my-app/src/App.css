@@ -1,5 +1,15 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
 body{
     display: flex;
     justify-content: center;
     text-align: center;
+}
+
+.banner{
+    min-height: 18em;
+    min-width: 100vw;
 }
