@@ -48,3 +48,11 @@ body{
     background-color: var(--very-dark-gray);
     border-radius: 0px 15px 15px 0px;
 }
+
+.data-display{
+    border: 1px solid red;
+    display: inline-block;
+    width: 18em;
+    min-height: 15em;
+    border-radius: 20px;
+}
