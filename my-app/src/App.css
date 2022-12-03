@@ -19,6 +19,7 @@ body{
 }
 
 .banner{
+    position: relative;
     min-height: 18em;
     min-width: 100vw;
 }
@@ -32,11 +33,13 @@ body{
 }
 
 .input-form{
-    display: inline-flex;
+    /* display: inline-flex; */
 }
 
 .input-field{
-    min-height: 3em;
+    position: relative;
+    top: -1.75em;
+    min-height: 4em;
     width: 18em;
     border-radius: 15px 0px 0px 15px;
     border: none;
@@ -50,6 +53,7 @@ body{
 }
 
 .data-display{
+    position: relative;
     border: 1px solid red;
     background-color: white;
     display: inline-block;
@@ -57,6 +61,7 @@ body{
     min-height: 16em;
     border-radius: 20px;
     margin-top: 1em;
+    z-index: 1000;
 }
 
 .data-title{
@@ -72,4 +77,14 @@ body{
     font-family: var(--ff-rubik);
     font-size: larger;
     font-weight: 500;
+}
+
+.map{
+    height: 800px;
+    width: 100vw;
+    z-index: 900;
+
+    position: relative;
+    top: -12em;
+
 }

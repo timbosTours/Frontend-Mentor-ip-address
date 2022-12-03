@@ -1,12 +1,11 @@
 import React from 'react';
 
-function DataDisplay(props) {
-  console.log(props.ipAddress);
+function DataDisplay() {
   return (
     <>
       <div className='data-display'>
       <h1 className='data-title'>IP ADDRESS</h1>
-      <p className='returned-data'></p>
+      <p className='returned-data'>data</p>
       <h2 className='data-title'>LOCATION</h2>
       <p className='returned-data'>data</p>
       <h3 className='data-title'>TIMEZONE</h3>
