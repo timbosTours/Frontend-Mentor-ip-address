@@ -51,8 +51,25 @@ body{
 
 .data-display{
     border: 1px solid red;
+    background-color: white;
     display: inline-block;
-    width: 18em;
-    min-height: 15em;
+    width: 19em;
+    min-height: 16em;
     border-radius: 20px;
+    margin-top: 1em;
+}
+
+.data-title{
+    font-family: var(--ff-rubik);
+    color: var(--dark-gray);
+    font-size: 10px;
+    font-weight: 500;
+    padding: .5em;
+    padding-top: 1.5em;
+    letter-spacing: 1px;
+}
+.returned-data{
+    font-family: var(--ff-rubik);
+    font-size: larger;
+    font-weight: 500;
 }

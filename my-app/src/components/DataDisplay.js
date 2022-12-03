@@ -1,17 +1,18 @@
-import React from 'react'
+import React from 'react';
 
-function DataDisplay() {
+function DataDisplay(props) {
+  console.log(props.ipAddress);
   return (
     <>
       <div className='data-display'>
-      <h1>IP ADDRESS</h1>
-      <p>data</p>
-      <h2>LOCATION</h2>
-      <p>data</p>
-      <h3>TIMEZONE</h3>
-      <p>data</p>
-      <h4>ISP</h4>
-      <p>data</p>
+      <h1 className='data-title'>IP ADDRESS</h1>
+      <p className='returned-data'></p>
+      <h2 className='data-title'>LOCATION</h2>
+      <p className='returned-data'>data</p>
+      <h3 className='data-title'>TIMEZONE</h3>
+      <p className='returned-data'>data</p>
+      <h4 className='data-title'>ISP</h4>
+      <p className='returned-data'>data</p>
       </div>
     </>
   )
