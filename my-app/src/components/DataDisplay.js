@@ -8,13 +8,13 @@ function DataDisplay(props) {
     <>
         <div className='data-display'>
           <h1 className='data-title'>IP ADDRESS</h1>
-          <p>{ props.data.ip }</p>
+          <p className='returned-data'>{ props.data.ip }</p>
         <h2 className='data-title'>LOCATION</h2>
-        <p>{ props.data.location.region}</p>
+        <p className='returned-data'>{ props.data.location.region}</p>
         <h3 className='data-title'>TIMEZONE</h3> 
-        <p>{ props.data.location.timezone }</p>
+        <p className='returned-data'>{ props.data.location.timezone }</p>
         <h4 className='data-title'>ISP</h4>
-        <p>{ props.data.isp }</p>
+        <p className='returned-data'>{ props.data.isp }</p> 
         </div>
     </>
   )

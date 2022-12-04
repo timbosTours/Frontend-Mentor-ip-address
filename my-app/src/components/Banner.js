@@ -11,12 +11,14 @@ import useFetch from '../hooks/useFetch';
 function Banner() {
   const [ipAddress, setIpAddress] = useState('');
 
-  const { data, loading, error } = useFetch('https://geo.ipify.org/api/v2/country?apiKey=at_8GE1HPonrAAGY0ggGjL3YAuoxACZ1&ipAddress=8.8.8.8');
+  const { data, loading, error } = useFetch('https://geo.ipify.org/api/v2/country?apiKey=at_8GE1HPonrAAGY0ggGjL3YAuoxACZ1');
 
 
   if (loading) return <h1>LOADING...</h1>;
 
   if (error) console.log(error);
+
+  console.log(data)
   
   return (
     <>
