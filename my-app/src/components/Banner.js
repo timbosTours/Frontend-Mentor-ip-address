@@ -3,11 +3,20 @@ import img from '../images/pattern-bg.png';
 import arrow from '../images/icon-arrow.svg';
 import DataDisplay from './DataDisplay';
 import Map from './Map';
+import useFetch from '../hooks/useFetch';
 
-// TODO add onSubmit handler function(hook) to search ip address
+// TODO add onSubmit handler function(hook) to  form element too search ip address
+// .env api key
 
 function Banner() {
   const [ipAddress, setIpAddress] = useState('');
+
+  const { data, loading, error } = useFetch('https://geo.ipify.org/api/v2/country?apiKey=at_8GE1HPonrAAGY0ggGjL3YAuoxACZ1&ipAddress=8.8.8.8');
+
+
+  if (loading) return <h1>LOADING...</h1>;
+
+  if (error) console.log(error);
   
   return (
     <>
@@ -25,7 +34,7 @@ function Banner() {
             alt='submit button'
             src={arrow} className='input-btn' />
         </form>
-          <DataDisplay key={ipAddress} />
+        <DataDisplay key={data} data={data} />
           <Map />
       </div>
     </>
