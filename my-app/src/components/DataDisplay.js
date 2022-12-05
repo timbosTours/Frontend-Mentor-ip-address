@@ -1,14 +1,17 @@
 import React from 'react';
 
+// TODO - conditional rendering??
+
 function DataDisplay(props) {
   const data = props.data;
+  const loading = props.loading;
+  const error = props.error;
 
-  console.log(data)
   return (
     <>
         <div className='data-display'>
           <h1 className='data-title'>IP ADDRESS</h1>
-          <p className='returned-data'>{ props.data.ip }</p>
+        <p className='returned-data'>{props.data.ip}</p>
         <h2 className='data-title'>LOCATION</h2>
         <p className='returned-data'>{ props.data.location.region}</p>
         <h3 className='data-title'>TIMEZONE</h3> 

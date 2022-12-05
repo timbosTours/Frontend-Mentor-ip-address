@@ -14,9 +14,9 @@ function Banner() {
   const { data, loading, error } = useFetch('https://geo.ipify.org/api/v2/country?apiKey=at_8GE1HPonrAAGY0ggGjL3YAuoxACZ1');
 
 
-  if (loading) return <h1>LOADING...</h1>;
+  // if (loading) return <h1>LOADING...</h1>;
 
-  if (error) console.log(error);
+  // if (error) console.log(error);
 
   console.log(data)
   
@@ -36,7 +36,7 @@ function Banner() {
             alt='submit button'
             src={arrow} className='input-btn' />
         </form>
-        <DataDisplay key={data} data={data} />
+        <DataDisplay key={data} data={data} loading={loading} error={error} />
           <Map />
       </div>
     </>
