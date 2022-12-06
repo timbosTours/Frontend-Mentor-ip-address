@@ -4,13 +4,13 @@ import axios from "axios";
 
 // TODO - add refetch(searchip) function
 
-function useFetch(url) {
+async function useFetch(url) {
     const [data, setData] = useState(null);
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState(null);
 
 
-    useEffect(() => {
+    await useEffect(() => {
         setLoading(true);
         axios
             .get(url)
