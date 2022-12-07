@@ -17,7 +17,7 @@ function Banner() {
 
   if (error) console.log(error);
 
-  console.log(data)
+  if (data) console.log(data)
   
   return (
     <>
@@ -35,7 +35,7 @@ function Banner() {
             alt='submit button'
             src={arrow} className='input-btn' />
         </form>
-        <DataDisplay key={data} data={data} loading={loading} error={error} />
+        {data && <DataDisplay key={data} data={data} />}
           <Map />
       </div>
     </>
