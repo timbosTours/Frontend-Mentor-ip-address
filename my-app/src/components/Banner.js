@@ -4,6 +4,7 @@ import arrow from '../images/icon-arrow.svg';
 import DataDisplay from './DataDisplay';
 import Map from './Map';
 import useFetch from '../hooks/useFetch';
+import useFetchSearch from '../hooks/useFetchSearch';
 
 // TODO add onSubmit handler function(hook) to  form element too search ip address
 // .env api key
@@ -23,11 +24,14 @@ function Banner() {
     <>
       <div className='banner' style={{ backgroundImage: `url(${img})`, backgroundRepeat: 'no-repeat' }}>
         <h1 className='title'>IP Address Tracker</h1>
-        <form className='input-form'>
+        <form
+          onSubmit={useFetchSearch}
+          type="submit"
+          className='input-form'>
           <input
             type="text"
-            value={ipAddress}
             onChange={(e)=>{setIpAddress(e.target.value)}} 
+            value={ipAddress}
             className='input-field'
             placeholder='Search for any IP address or domain' />
           <input
