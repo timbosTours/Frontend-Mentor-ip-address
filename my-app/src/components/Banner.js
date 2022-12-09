@@ -14,11 +14,16 @@ function Banner() {
 
   const { data, loading, error } = useFetch('https://geo.ipify.org/api/v2/country?apiKey=at_8GE1HPonrAAGY0ggGjL3YAuoxACZ1');
 
+  const {searchData, searchLoading, searchError} = useFetchSearch(`https://geo.ipify.org/api/v2/country?apiKey=at_8GE1HPonrAAGY0ggGjL3YAuoxACZ1&ipAddress=${ipAddress}`)
+
   if (loading) return <h1>LOADING...</h1>;
+  if (searchLoading) return <h1>LOADING...</h1>;
 
   if (error) console.log(error);
+  if (searchError) console.log(error);
 
   if (data) console.log(data)
+  if (searchData) console.log(searchData)
   
   return (
     <>
@@ -40,6 +45,7 @@ function Banner() {
             src={arrow} className='input-btn' />
         </form>
         {data && <DataDisplay key={data} data={data} />}
+        {searchData && <DataDisplay key={searchData} data={searchData} />}
           <Map />
       </div>
     </>
