@@ -21,8 +21,8 @@ function Search(props) {
 
     return (
         <>
-            {searchData && <DataDisplay key={searchData} data={searchData} />}
-            {searchData && <Map key={searchData} data={searchData} />}
+            {searchData && <DataDisplay key={searchData.ipAddress} data={searchData} />}
+            {searchData && <Map key={searchData.ipAddress} data={searchData} />}
         </>
     )
 }

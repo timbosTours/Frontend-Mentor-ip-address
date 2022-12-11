@@ -21,8 +21,8 @@ function Home() {
 
     return (
         <>
-            {data && <DataDisplay key={data} data={data} />}
-            {data && <Map key={data} data={data} />}
+            {data && <DataDisplay key={data.ipAddress} data={data} />}
+            {data && <Map key={data.ipAddress} data={data} />}
         </>
     )
 }
