@@ -18,11 +18,11 @@ function Navbar() {
     },
     onSubmit: (values) => {
       setSearchIp(values)
-      console.log(values)
+      // console.log(values)
     }
   })
 
-  console.log(formik.values)
+  // console.log(formik.values)
 
   return (
     <>
