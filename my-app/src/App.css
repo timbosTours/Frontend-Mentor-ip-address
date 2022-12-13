@@ -54,7 +54,6 @@ body{
 
 .data-display{
     position: relative;
-    border: 1px solid red;
     background-color: white;
     display: inline-block;
     width: 19em;
@@ -87,4 +86,37 @@ body{
     position: relative;
     top: -12em;
 
+}
+
+@media (min-width: 1100px) {
+    .input-field{
+        width: 40em;
+    }
+    .data-display{
+        display: inline-flex;
+        min-height: 12em;
+        width: 68em;
+    }
+    .data-box{
+        margin: 3em;
+        padding-left: 4em;
+        margin-left: 0em;
+        text-align: left;
+        border-left: 1px solid var(--dark-gray);
+        height: 6em;
+    }
+    .data-title{
+        margin-top: -2em;
+        margin-bottom: 2em;
+        font-size: 11px;
+    }
+    .returned-data{
+        font-size: 22px;
+    }
+    .ip-address{
+        border: none;
+    }
+    .map{
+        top: -8em;
+    }
 }

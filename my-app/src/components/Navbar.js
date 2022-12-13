@@ -27,7 +27,7 @@ function Navbar() {
   return (
     <>
       <div className='banner' style={{ backgroundImage: `url(${img})`, backgroundRepeat: 'no-repeat' }}>
-        <h1 className='title'>IP Address Tracker</h1>
+        <h1 tabIndex={0} className='title'>IP Address Tracker</h1>
         <form onSubmit={formik.handleSubmit}
           >
           <input
