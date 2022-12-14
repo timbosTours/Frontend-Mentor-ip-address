@@ -32,10 +32,6 @@ body{
     padding: 1em;
 }
 
-.input-form{
-    /* display: inline-flex; */
-}
-
 .input-field{
     position: relative;
     top: -1.75em;
@@ -99,7 +95,8 @@ body{
     }
     .data-box{
         margin: 3em;
-        padding-left: 4em;
+        padding-left: 3.5em;
+        padding-right: 1em;
         margin-left: 0em;
         text-align: left;
         border-left: 1px solid var(--dark-gray);
