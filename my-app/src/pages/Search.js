@@ -23,6 +23,7 @@ function Search(props) {
         <>
             {searchData && <DataDisplay key={searchData.ipAddress} data={searchData}/> }
             {searchData && <Map key={searchData.ipAddress} data={searchData} />}
+            {searchError && <h1 className='title'>ERROR... Please enter valid email address or domain</h1>}
         </>
     )
 }

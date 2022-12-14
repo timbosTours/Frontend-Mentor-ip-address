@@ -39,7 +39,7 @@ function Navbar() {
             placeholder='Search for any IP address or domain' />
           <input
             type="image"
-            alt='submit button'
+            alt='submit'
             src={arrow} className='input-btn' />
             
             

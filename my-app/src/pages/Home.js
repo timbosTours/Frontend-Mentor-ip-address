@@ -14,7 +14,7 @@ function Home() {
     // console.log(process.env.REACT_APP_API_KEY)
     
     if (loading) return <h1>LOADING...</h1>;
-    if (error) console.log(error);
+    if (error) return <h1>ERROR... PLease enter valid email address</h1>;
     // if (data) console.log(data)
 
     console.log('You rendered Home component')
@@ -22,7 +22,7 @@ function Home() {
     return (
         <>
             {data && <DataDisplay key={data.ipAddress} data={data} />}
-            {data && <Map key={data.ipAddress} data={data} />}
+            {data && <Map key={data.ipAddress} data={data} /> }
         </>
     )
 }
