@@ -7,22 +7,22 @@ function DataDisplay(props) {
 
   return (
     < Fragment >
-      <div tabIndex={0} className='data-display'>
+      <div tabIndex={0} aria-label="Returned I P data" className='data-display'>
         <span className='data-box ip-address'>
           <h1 tabIndex={0} className='data-title'>IP ADDRESS</h1>
-          <p className='returned-data'>{props.data.ip}</p>
+          <p tabIndex={0} className='returned-data'>{props.data.ip}</p>
         </span>
         <span className='data-box location'>
           <h2 tabIndex={0} className='data-title'>LOCATION</h2>
-          <p className='returned-data'>{props.data.location.region}</p>
+          <p tabIndex={0} className='returned-data'>{props.data.location.region}</p>
         </span>
         <span className='data-box timezone'>
           <h3 tabIndex={0} className='data-title'>TIMEZONE</h3>
-          <p className='returned-data'>{props.data.location.timezone}</p>
+          <p tabIndex={0} className='returned-data'>{props.data.location.timezone}</p>
         </span>
         <span className='data-box isp'>
           <h4 tabIndex={0} className='data-title'>ISP</h4>
-          <p className='returned-data'>{props.data.isp}</p>
+          <p tabIndex={0} aria-label={"I S P"} className='returned-data'>{props.data.isp}</p>
         </span>
       </div>
     </Fragment >

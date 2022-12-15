@@ -10,7 +10,7 @@ function Search(props) {
 
     const { searchData, searchLoading, searchError } = useFetchSearch(`${api}apiKey=${apiKey}&ipAddress=${ipAddress}`);
 
-    if (searchLoading) return <h1>LOADING...</h1>;
+    if (searchLoading) return <h1 className='title'>LOADING...</h1>;
     
     if (searchError) console.log(searchError);
 
@@ -23,7 +23,10 @@ function Search(props) {
         <>
             {searchData && <DataDisplay key={searchData.ipAddress} data={searchData}/> }
             {searchData && <Map key={searchData.ipAddress} data={searchData} />}
-            {searchError && <h1 className='title'>ERROR... Please enter valid email address or domain</h1>}
+            {searchError && 
+            <div>
+            <h1 className='title'>Error... Please enter valid email address or domain</h1>
+            </div>}
         </>
     )
 }
