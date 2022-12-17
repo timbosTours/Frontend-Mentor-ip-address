@@ -1,9 +1,7 @@
 import { useEffect, useState } from 'react';
 import axios from "axios";
 
-
-// TODO - add refetch(searchip) function
-
+// custom hook for searching IP Addresses
 function useFetchSearch(url) {
     const [searchData, setSearchData] = useState(null);
     const [searchLoading, setSearchLoading] = useState(false);

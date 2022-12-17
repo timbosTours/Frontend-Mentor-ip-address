@@ -1,10 +1,9 @@
 import { useEffect, useState } from 'react';
 import axios from "axios";
 
-
-// TODO - add refetch(searchip) function
-
+// custom hook to get users data on load
 function useFetch(url) {
+
     const [data, setData] = useState(null);
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState(null);

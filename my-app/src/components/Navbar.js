@@ -5,24 +5,19 @@ import {useFormik} from "formik"
 import Home from '../pages/Home';
 import Search from '../pages/Search';
 
-// TODO add onSubmit handler function(hook) to  form element too search ip address
-// .env api key
 
 function Navbar() {
   const [searchIp, setSearchIp] = useState('')
 
-  // Formik form lib
+  // Formik form library
   const formik = useFormik({
     initialValues: {
       ipAddress: ""
     },
     onSubmit: (values) => {
       setSearchIp(values)
-      // console.log(values)
     }
   })
-
-  // console.log(formik.values)
 
   return (
     <>
@@ -45,6 +40,7 @@ function Navbar() {
             
         </form>
 
+        {/* Conditional rendering. Checks if searchIp has state from user input. if so renders search page with search ip data. if not it defaults to home page */}
         {searchIp ? <Search searchIp={searchIp} /> : <Home/>}
 
       </div>
