@@ -32,6 +32,10 @@ body{
     padding: 1em;
 }
 
+.title-link{
+    text-decoration: none;
+}
+
 .input-field{
     position: relative;
     top: -1.75em;
