@@ -17,7 +17,7 @@ function Navbar() {
     onSubmit: (values) => {
       setSearchIp(values)
 
-      fetch('http://localhost:3000/', {
+      fetch('http://localhost:5000/', {
         method: 'POST',
         headers: { "Content-Type": "aplication/json" },
         body: JSON.stringify(values)
