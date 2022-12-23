@@ -17,11 +17,14 @@ app.use((req, res, next) => {
 });
 
 app.get('/', (req, res) => {
-    res.json('hola!')
+  res.json('hola!')
+  console.log(req.body)
 })
 
-app.post('/', (req, res) => {
-    res.json(res)
-})
+
+// app.get('/searchip', async (req, res) => {
+//   req.json(req.query)
+//   console.log(req.query)
+// })
 
 app.listen(5000, ()=> {console.log(`Server is running on port ${PORT}`)})

@@ -4,6 +4,7 @@ import arrow from '../images/icon-arrow.svg';
 import {useFormik} from "formik"
 import Home from '../pages/Home';
 import Search from '../pages/Search';
+import axios from 'axios';
 
 
 function Navbar() {
@@ -14,14 +15,20 @@ function Navbar() {
     initialValues: {
       ipAddress: ""
     },
-    onSubmit: (values) => {
+    onSubmit: async (values) => {
       setSearchIp(values)
 
-      fetch('http://localhost:5000/', {
-        method: 'POST',
-        headers: { "Content-Type": "aplication/json" },
-        body: JSON.stringify(values)
-      })
+      try {
+        const resp = await axios.post('http://localhost:5000/', { values });
+        console.log(resp.data);
+      } catch (error) {
+        console.log(error.response)
+      }
+      // axios.post('http://localhost:5000/', {
+      //   method: 'POST',
+      //   data: values,
+      //   headers: { "Content-Type": "multipart/form-data" },
+      // })
     }
   })
 
