@@ -5,7 +5,7 @@ import {useFormik} from "formik"
 import Home from '../pages/Home';
 import Search from '../pages/Search';
 import axios from 'axios';
-
+import qs from 'qs';
 
 function Navbar() {
   const [searchIp, setSearchIp] = useState('')
@@ -19,18 +19,14 @@ function Navbar() {
       setSearchIp(values)
 
       try {
-        const resp = await axios.post('http://localhost:5000/', { values });
+        const resp = await axios.post('http://localhost:5000', qs.stringify({ values }));
         console.log(resp.data);
       } catch (error) {
         console.log(error.response)
       }
-      // axios.post('http://localhost:5000/', {
-      //   method: 'POST',
-      //   data: values,
-      //   headers: { "Content-Type": "multipart/form-data" },
-      // })
     }
   })
+
 
   return (
     <>
@@ -41,6 +37,7 @@ function Navbar() {
           <input
             type="text"
             name='ipAddress'
+            id='ipAddress'
             onChange={formik.handleChange}
             value={formik.values.ipAddress}
             className='input-field'
@@ -48,8 +45,8 @@ function Navbar() {
           <input
             type="image"
             alt='submit'
+            onChange={formik.handleChange}
             src={arrow} className='input-btn' />
-            
             
         </form>
 
