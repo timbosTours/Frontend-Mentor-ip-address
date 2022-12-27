@@ -8,11 +8,11 @@ import DataDisplay from '../components/DataDisplay';
 function Home() {
 
     // get api and key from .env files
-    const api = process.env.REACT_APP_API;
-    const apiKey = process.env.REACT_APP_API_KEY;
+    // const api = process.env.REACT_APP_API;
+    // const apiKey = process.env.REACT_APP_API_KEY;
 
     // fetch users ip data
-    const { data, loading, error } = useFetch(`${api}apiKey=${apiKey}`);
+    const { data, loading, error } = useFetch('http://localhost:5000/user');
 
     // while awaiting data render loading 
     if (loading) return <h1 className='title'>LOADING...</h1>;

@@ -19,8 +19,8 @@ function Navbar() {
       setSearchIp(values)
 
       try {
-        const resp = await axios.post('http://localhost:5000', qs.stringify({ values }));
-        console.log(resp.data);
+        const resp = await axios.post('http://localhost:5000/search', qs.stringify({ values }));
+        console.log(resp.body);
       } catch (error) {
         console.log(error.response)
       }
