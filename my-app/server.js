@@ -29,19 +29,22 @@ app.get('/user', async (req, res) => {
   const fetch_response = await axios.get(`${url}apiKey=${apiKey}`);
   const ipData = await fetch_response.data;
   res.json(ipData)
-  console.log(ipData)
 
 })
 
 app.post('/search', async (req, res) => {
   const searchIp = await req.body.values.ipAddress
-  res.status(201)
 
-  const fetch_response = await axios.get(`${url}apiKey=${apiKey}&ipAddress=${searchIp}`);
-  const ipData = await fetch_response.data;
-  res.json(ipData)
-  console.log(ipData)
+
+  const search_fetch_response = await
+    axios.get(`${url}apiKey=${apiKey}&ipAddress=${searchIp}`);
+  
+  
+  const searchIpData = await search_fetch_response.data;
+  res.json(searchIpData)
+  console.log(searchIpData)
 })
+
 
 
 app.listen(5000, ()=> {console.log(`Server is running on port ${PORT}`)})

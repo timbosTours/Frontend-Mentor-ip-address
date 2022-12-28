@@ -3,7 +3,7 @@ import useFetchSearch from '../hooks/useFetchSearch';
 import Map from '../components/Map';
 import DataDisplay from '../components/DataDisplay';
 
-function Search(props) {
+async function Search() {
     
     // get search IP Address from props
     // let ipAddress = props.searchIp.ipAddress

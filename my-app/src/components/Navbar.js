@@ -1,26 +1,25 @@
-import React, {useState} from 'react';
+import React from 'react';
 import img from '../images/pattern-bg.png';
 import arrow from '../images/icon-arrow.svg';
 import {useFormik} from "formik"
-import Home from '../pages/Home';
-import Search from '../pages/Search';
 import axios from 'axios';
 import qs from 'qs';
+import Home from './Home'
 
 function Navbar() {
-  const [searchIp, setSearchIp] = useState('')
 
   // Formik form library
   const formik = useFormik({
     initialValues: {
       ipAddress: ""
     },
-    onSubmit: async (values) => {
-      setSearchIp(values)
+    onSubmit:
+      async (values) => {
+      // setSearchIp(values)
 
       try {
         const resp = await axios.post('http://localhost:5000/search', qs.stringify({ values }));
-        console.log(resp.body);
+        console.log(resp)
       } catch (error) {
         console.log(error.response)
       }
@@ -50,9 +49,9 @@ function Navbar() {
             
         </form>
 
-        {/* Conditional rendering. Checks if searchIp has state from user input. if so renders search page with search ip data. if not it defaults to home page */}
-        {searchIp ? <Search searchIp={searchIp} /> : <Home/>}
-
+        {/* Conditional rendering. Checks if searchIp has state from user input. if so renders search page with search ip data. if not it defaults to home page
+        {values ? <Search searchIp={searchIp} /> : <Home/>} */}
+        <Home/>
       </div>
     </>
   )
