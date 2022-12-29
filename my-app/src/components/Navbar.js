@@ -4,9 +4,10 @@ import arrow from '../images/icon-arrow.svg';
 import {useFormik} from "formik"
 import axios from 'axios';
 import qs from 'qs';
-import Home from './Home'
+import { useNavigate } from 'react-router-dom';
 
-function Navbar() {
+function Navbar({ setReturnedData }) {
+  const navigate = useNavigate();
 
   // Formik form library
   const formik = useFormik({
@@ -16,17 +17,21 @@ function Navbar() {
     onSubmit:
       async (values) => {
       // setSearchIp(values)
-
+      
+      //   axios.post('http://localhost:5000/search', qs.stringify({ values }));
+      // //   console.log(resp)
+        
       try {
         const resp = await axios.post('http://localhost:5000/search', qs.stringify({ values }));
+        setReturnedData(resp)
+        navigate('/search')
         console.log(resp)
       } catch (error) {
         console.log(error.response)
       }
-    }
+      }
   })
-
-
+  
   return (
     <>
       <div className='banner' style={{ backgroundImage: `url(${img})`, backgroundRepeat: 'no-repeat' }}>
@@ -51,7 +56,6 @@ function Navbar() {
 
         {/* Conditional rendering. Checks if searchIp has state from user input. if so renders search page with search ip data. if not it defaults to home page
         {values ? <Search searchIp={searchIp} /> : <Home/>} */}
-        <Home/>
       </div>
     </>
   )
