@@ -22,7 +22,7 @@ function Navbar({ setReturnedData }) {
       // //   console.log(resp)
         
       try {
-        const resp = await axios.post('http://localhost:5000/search', qs.stringify({ values }));
+        const resp = await axios.post('http://localhost:5000/search', qs.stringify({ values })).then();
         setReturnedData(resp)
         navigate('/search')
         console.log(resp)
