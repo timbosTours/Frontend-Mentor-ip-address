@@ -13,7 +13,7 @@ function DataDisplay(props) {
         </span>
         <span className='data-box location'>
           <h2 tabIndex={0} className='data-title'>LOCATION</h2>
-          <p tabIndex={0} className='returned-data'>      {props.data.location.region}</p>
+          <p tabIndex={0} className='returned-data'>      {`${props.data.location.city}, ${props.data.location.region}`}</p>
         </span>
         <span className='data-box timezone'>
           <h3 tabIndex={0} className='data-title'>TIMEZONE</h3>

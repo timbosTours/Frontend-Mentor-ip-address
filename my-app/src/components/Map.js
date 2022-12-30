@@ -3,12 +3,14 @@ import React from 'react'
 // TODO bring in props to make center/Marker position dynamic
 
 // React leaflet imports
-import {MapContainer, TileLayer, Marker} from 'react-leaflet'
+import {MapContainer, TileLayer, Marker, Popup} from 'react-leaflet'
 
 function Map(props) {
   // get lattitude and longitude from props
   let lat = props.data.location.lat
   let lng = props.data.location.lng
+  let city = props.data.location.city
+  let region = props.data.location.region
 
   return (
     <>
@@ -17,7 +19,7 @@ function Map(props) {
     attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
     url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
   />
-  <Marker position={[lat, lng]}>
+        <Marker tabindex={0} position={[lat, lng]} title={`${city}, ${region}`}>
   </Marker>
       </MapContainer>
     </>
