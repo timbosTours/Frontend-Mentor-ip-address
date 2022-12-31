@@ -19,7 +19,6 @@ function Home() {
 
     return (
         <>
-            {/* Conditionally render data/loading/error */}
             {data &&
                 
                 <DataDisplay key={data.ipAddress} data={data} />}
