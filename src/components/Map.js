@@ -3,7 +3,7 @@ import React from 'react'
 // TODO bring in props to make center/Marker position dynamic
 
 // React leaflet imports
-import {MapContainer, TileLayer, Marker, Popup} from 'react-leaflet'
+import {MapContainer, TileLayer, Marker} from 'react-leaflet'
 
 function Map(props) {
   // get lattitude and longitude from props
