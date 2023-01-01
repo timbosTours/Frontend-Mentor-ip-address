@@ -1,7 +1,5 @@
 import React from 'react'
 
-// TODO bring in props to make center/Marker position dynamic
-
 // React leaflet imports
 import {MapContainer, TileLayer, Marker} from 'react-leaflet'
 
