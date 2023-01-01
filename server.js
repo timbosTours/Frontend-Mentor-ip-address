@@ -1,10 +1,9 @@
 const express = require('express')
-const cors = require('cors')
 const axios = require('axios')
 require('dotenv').config()
 
-const PORT = 5000
-// const port = process.env.PORT
+
+const port = process.env.PORT || 5000
 const url = process.env.URL
 const apiKey = process.env.API_KEY
 
@@ -47,4 +46,4 @@ app.post('/search', async (req, res) => {
 
 
 
-app.listen(5000, ()=> {console.log(`Server is running on port ${PORT}`)})
+app.listen(5000, ()=> {console.log(`Server is running on port ${port}`)})
