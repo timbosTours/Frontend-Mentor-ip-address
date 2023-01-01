@@ -16,10 +16,6 @@ function Navbar({ setReturnedData }) {
     },
     onSubmit:
       async (values) => {
-      // setSearchIp(values)
-      
-      //   axios.post('http://localhost:5000/search', qs.stringify({ values }));
-      // //   console.log(resp)
         
       try {
         const resp = await axios.post('http://localhost:5000/search', qs.stringify({ values })).then();
@@ -53,9 +49,6 @@ function Navbar({ setReturnedData }) {
             src={arrow} className='input-btn' />
             
         </form>
-
-        {/* Conditional rendering. Checks if searchIp has state from user input. if so renders search page with search ip data. if not it defaults to home page
-        {values ? <Search searchIp={searchIp} /> : <Home/>} */}
       </div>
     </>
   )
