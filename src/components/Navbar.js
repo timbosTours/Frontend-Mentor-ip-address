@@ -18,7 +18,7 @@ function Navbar({ setReturnedData }) {
       async (values) => {
         
       try {
-        const resp = await axios.post('http://localhost:5000/search', qs.stringify({ values })).then();
+        const resp = await axios.post('https://colorful-teal-dungarees.cyclic.app/search', qs.stringify({ values })).then();
         setReturnedData(resp)
         navigate('/search')
         console.log(resp)

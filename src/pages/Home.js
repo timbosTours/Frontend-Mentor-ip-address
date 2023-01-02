@@ -8,7 +8,7 @@ import DataDisplay from '../components/DataDisplay';
 function Home() {
 
     // fetch users ip data
-    const { data, loading, error } = useFetch('http://localhost:5000/user');
+    const { data, loading, error } = useFetch('https://colorful-teal-dungarees.cyclic.app/user');
 
 // 
     // while awaiting data render loading 
