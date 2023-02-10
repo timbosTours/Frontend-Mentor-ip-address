@@ -21,7 +21,7 @@ function DataDisplay(props) {
         </span>
         <span className='data-box isp'>
           <h4 tabIndex={0} className='data-title'>ISP</h4>
-          <p tabIndex={0} aria-label={"I S P"} className='returned-data'>{props.data.isp}</p>
+          <p tabIndex={0} aria-label={"I S P"} className='returned-data returned-isp'>{props.data.isp}</p>
         </span>
       </div>
     </>

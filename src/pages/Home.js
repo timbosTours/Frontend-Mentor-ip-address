@@ -4,7 +4,6 @@ import Map from '../components/Map';
 import DataDisplay from '../components/DataDisplay';
 
 
-
 function Home() {
 
     // fetch users ip data

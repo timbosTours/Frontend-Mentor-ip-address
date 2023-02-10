@@ -5,6 +5,9 @@ import {useFormik} from "formik"
 import axios from 'axios';
 import qs from 'qs';
 import { useNavigate } from 'react-router-dom';
+// import { validationSchema } from '../Validations/inputValidation';
+
+// TODO - fix map rerender problem
 
 function Navbar({ setReturnedData }) {
   const navigate = useNavigate();
@@ -12,12 +15,13 @@ function Navbar({ setReturnedData }) {
   // Formik form library
   const formik = useFormik({
     initialValues: {
-      ipAddress: ""
+      inputValue: '',
     },
+    // validationSchema: validationSchema,
     onSubmit:
       async (values) => {
         
-      try {
+        try {
         const resp = await axios.post('https://colorful-teal-dungarees.cyclic.app/search', qs.stringify({ values })).then();
         setReturnedData(resp)
         navigate('/search')
@@ -36,10 +40,10 @@ function Navbar({ setReturnedData }) {
           >
           <input
             type="text"
-            name='ipAddress'
-            id='ipAddress'
+            name='inputValue'
+            id='inputValue'
             onChange={formik.handleChange}
-            value={formik.values.ipAddress}
+            value={formik.values.inputValue}
             className='input-field'
             placeholder='Search for any IP address or domain' />
           <input

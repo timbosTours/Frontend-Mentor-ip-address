@@ -6,9 +6,12 @@ function Search(props) {
     const searchData = props.returnedData.data
     return (
         <>
-            {/* conditionally render search data/loading/error */}
-            {searchData && <DataDisplay key={searchData.ipAddress} data={searchData}/> }
-            {searchData && <Map key={searchData.ipAddress} data={searchData} />}
+            {/* conditionally render search data/
+                use backticks with date.now() to avoid name collisions so map component renders on every search
+            */}
+            {searchData &&
+                <DataDisplay key={`data-display-${searchData.ipAddress}-${Date.now()}`} data={searchData}/>}
+            {searchData && <Map key={`map-${searchData.ipAddress}-${Date.now()}`} data={searchData} /> }
         </>
     )
 }
