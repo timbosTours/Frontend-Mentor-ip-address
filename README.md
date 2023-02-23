@@ -1,70 +1,134 @@
-# Getting Started with Create React App
+# Frontend Mentor - IP address tracker solution
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is a solution to the [IP address tracker challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/ip-address-tracker-I8-0yYAH0). Frontend Mentor challenges help you improve your coding skills by building realistic projects. 
 
-## Available Scripts
+## Table of contents
 
-In the project directory, you can run:
+- [Overview](#overview)
+  - [The challenge](#the-challenge)
+  - [Screenshot](#screenshot)
+  - [Links](#links)
+- [My process](#my-process)
+  - [Built with](#built-with)
+  - [What I learned](#what-i-learned)
+  - [Continued development](#continued-development)
+  - [Useful resources](#useful-resources)
+- [Author](#author)
+- [Acknowledgments](#acknowledgments)
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Overview
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Boy! What a doozy! When I first stepped up to do my first intermediate project from Frontend Mentor I didn't quite know what I was getting myself into, nor did I know how much I would learn by taking on this challenge. I learnt React and built my first app with an express server. Thank you for the great challenges Frontend Mentor
 
-### `npm test`
+### The challenge
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Users should be able to:
 
-### `npm run build`
+- View the optimal layout for each page depending on their device's screen size
+- See hover states for all interactive elements on the page
+- See their own IP address on the map on the initial page load
+- Search for any IP addresses or domains and see the key information and location
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Screenshot
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+![](./src/images/screen-shot-desltop.png)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+![](./src/images/screen-shot-mobile.png)
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### Links
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- Solution URL: [Add solution URL here](https://github.com/timbosTours/Frontend-Mentor-ip-address)
+- Live Site URL: [Add live site URL here](https://glittery-halva-a7c1b2.netlify.app/search)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## My process
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+I went with a mobile first approach. Starting off with the html and a basic GET request to fetch data from ipify. I quickly hit the wall of needing to hide my API keys which led me to adding an express server (I know about serverless functions but I wanted to have a project that uses express). Learning both React and express meant that this projext took a while. I kept learning and tinkering and learning and tinkering. I sorted out all the CSS pretty early on in the process but had to learn a lot more about working with API's and react hooks like useEffect. I finished off with adding the ability to search domains where as at the start I only had it requesting ip address's.
 
-## Learn More
+### Built with
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- Semantic HTML5 markup
+- Mobile-first workflow
+- [React](https://reactjs.org/) - JS library
+- [Express](https://expressjs.com/)
+- [Node](https://nodejs.org/en/)
+- custom hooks
+- [Formik](https://formik.org/)
 
-To learn React, check out the [React documentation](https://reactjs.org/).
 
-### Code Splitting
+### What I learned
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+I learned that when working with API's you often need to hide your private keys, this means either adding a server or using serverless functions. This was my first POST request which incuded my first Regex.
 
-### Analyzing the Bundle Size
+```js
+app.post('/search', async (req, res) => {
+  const value = await req.body.values.inputValue
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+    let search_fetch_response = {}
 
-### Making a Progressive Web App
+    
+  if (DOMAIN_REGEX) {
+    try{  
+      search_fetch_response = await
+        axios.get(`${url}apiKey=${apiKey}&domain=${value}`);
+    } catch (error) {
+      return res.status(500).send({ error: error.message });
+    }
+  } 
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+  let searchIpData = await search_fetch_response.data;
+  res.json(searchIpData)
+  console.log(searchIpData)
+})
+```
 
-### Advanced Configuration
+And my first time using a custom hook
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+```js
+import { useEffect, useState } from 'react';
+import axios from "axios";
 
-### Deployment
+// custom hook to get users data on load
+function useFetch(url) {
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+    const [data, setData] = useState(null);
+    const [loading, setLoading] = useState(false);
+    const [error, setError] = useState(null);
 
-### `npm run build` fails to minify
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+    useEffect(() => {
+        setLoading(true);
+        axios
+            .get(url)
+            .then(res => { setData(res.data) })
+            .catch((err) => { setError(err) })
+            .finally(() => { setLoading(false) })
+    }, [url]);
+
+    return { data, loading, error};
+}
+
+export default useFetch
+```
+
+### Continued development
+
+Could definitely get a better understanding of CORS, A11y could be better, leaflet does not have great accessibility built in. The loading spinners can be improved and the leaflet load time is not optimal.
+
+### Useful resources
+
+- [PedroTech](https://www.youtube.com/@PedroTechnologies) - This guys channel helped me with React hooks and Formik
+- [Prof3ssorSt3v3](https://www.youtube.com/@SteveGriffith-Prof3ssorSt3v3) - Got me through building my express server.
+
+
+## Author
+
+- Website - [@timbosTours](https://github.com/timbosTours)
+- Frontend Mentor - [@timbosTours](https://www.frontendmentor.io/profile/timbosTours)
+- Twitter - [@timbosTours](https://www.twitter.com/@timbosTours)
+
+
+## Acknowledgments
+
+Thank you to Frontend Mentor for this awesome challenge, and thank you to anyone who reviews my code and to all the amazing web dev content creators out there!

@@ -5,9 +5,7 @@ import {useFormik} from "formik"
 import axios from 'axios';
 import qs from 'qs';
 import { useNavigate } from 'react-router-dom';
-// import { validationSchema } from '../Validations/inputValidation';
 
-// TODO - fix map rerender problem
 
 function Navbar({ setReturnedData }) {
   const navigate = useNavigate();
@@ -17,7 +15,6 @@ function Navbar({ setReturnedData }) {
     initialValues: {
       inputValue: '',
     },
-    // validationSchema: validationSchema,
     onSubmit:
       async (values) => {
         
