@@ -57,6 +57,7 @@ I went with a mobile first approach. Starting off with the html and a basic GET 
 - [Node](https://nodejs.org/en/)
 - custom hooks
 - [Formik](https://formik.org/)
+- [Axios](https://axios-http.com/docs/intro)
 
 
 ### What I learned
