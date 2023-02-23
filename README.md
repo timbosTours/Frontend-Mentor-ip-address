@@ -19,7 +19,7 @@ This is a solution to the [IP address tracker challenge on Frontend Mentor](http
 
 ## Overview
 
-Boy! What a doozy! When I first stepped up to do my first intermediate project from Frontend Mentor I didn't quite know what I was getting myself into, nor did I know how much I would learn by taking on this challenge. I learnt React and built my first app with an express server. Thank you for the great challenges Frontend Mentor
+What a great challenge! When I first stepped up to do my first intermediate project from Frontend Mentor I didn't quite know what I was getting myself into, nor did I know how much I would learn by taking on this challenge. I learnt React and built my first app with an express server. Thank you for the great challenges Frontend Mentor
 
 ### The challenge
 
@@ -51,6 +51,8 @@ I went with a mobile first approach. Starting off with the html and a basic GET 
 - Semantic HTML5 markup
 - Mobile-first workflow
 - [React](https://reactjs.org/) - JS library
+- [React-Leaflet](https://react-leaflet.js.org/)
+- [Ipify](https://www.ipify.org/)
 - [Express](https://expressjs.com/)
 - [Node](https://nodejs.org/en/)
 - custom hooks
@@ -114,7 +116,7 @@ export default useFetch
 
 ### Continued development
 
-Could definitely get a better understanding of CORS, A11y could be better, leaflet does not have great accessibility built in. The loading spinners can be improved and the leaflet load time is not optimal.
+A11y could be better, leaflet does not have great accessibility built in. The loading spinners can be improved and the leaflet load time is not optimal.
 
 ### Useful resources
 
