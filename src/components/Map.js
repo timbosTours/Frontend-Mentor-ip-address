@@ -1,4 +1,5 @@
 import React from 'react'
+import "leaflet-loading"
 
 // React leaflet imports
 import {MapContainer, TileLayer, Marker} from 'react-leaflet'
@@ -12,7 +13,7 @@ function Map(props) {
 
   return (
     <>
-    <MapContainer className='map' center={[lat, lng]} zoom={13} scrollWheelZoom={false} >
+    <MapContainer className='map' center={[lat, lng]} zoom={13} scrollWheelZoom={false} loadingControl={true} >
   <TileLayer
     attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
     url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
