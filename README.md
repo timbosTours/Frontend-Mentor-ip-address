@@ -19,7 +19,7 @@ This is a solution to the [IP address tracker challenge on Frontend Mentor](http
 
 ## Overview
 
-What a great challenge! When I first stepped up to do my first intermediate project from Frontend Mentor I didn't quite know what I was getting myself into, nor did I know how much I would learn by taking on this challenge. I learnt React and built my first app with an express server. Thank you for the great challenges Frontend Mentor
+What a great challenge! When I first stepped up to do my first intermediate project from Frontend Mentor I didn't quite know what I was getting myself into, nor did I know how much I would learn by taking on this challenge. I learnt React and built my first app with an express server. Thank you for the great challenges Frontend Mentor.
 
 ### The challenge
 
@@ -39,12 +39,12 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://github.com/timbosTours/Frontend-Mentor-ip-address)
-- Live Site URL: [Add live site URL here](https://glittery-halva-a7c1b2.netlify.app/search)
+- Solution URL: [https://github.com/timbosTours/Frontend-Mentor-ip-address](https://github.com/timbosTours/Frontend-Mentor-ip-address)
+- Live Site URL: [https://glittery-halva-a7c1b2.netlify.app/search](https://glittery-halva-a7c1b2.netlify.app/search)
 
 ## My process
 
-I went with a mobile first approach. Starting off with the html and a basic GET request to fetch data from ipify. I quickly hit the wall of needing to hide my API keys which led me to adding an express server (I know about serverless functions but I wanted to have a project that uses express). Learning both React and express meant that this projext took a while. I kept learning and tinkering and learning and tinkering. I sorted out all the CSS pretty early on in the process but had to learn a lot more about working with API's and react hooks like useEffect. I finished off with adding the ability to search domains where as at the start I only had it requesting ip address's.
+I went with a mobile first approach. Starting off with the html and a basic GET request to fetch data from Ipify. I quickly hit the wall of needing to hide my API keys which led me to adding an Express server. Learning both React and Express meant that this project took a while but it taught me a lot. I kept learning and tinkering and learning and tinkering. I sorted out all the CSS pretty early on in the process but had to learn a lot more about working with API's and React hooks like useEffect. I finished off with adding the ability to search domains where as at the start I only had it requesting IP address's.
 
 ### Built with
 
